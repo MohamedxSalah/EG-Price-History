@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EG Price History Finder</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo">₤</div>
+    <div>
+      <h1>Price History Finder</h1>
+      <p class="subtitle">Amazon EG · Noon EG · Jumia EG</p>
+    </div>
+  </header>
+
+  <div id="content">
+    <div id="loading" class="state">
+      <div class="spinner"></div>
+      <p>Reading this page…</p>
+    </div>
+
+    <div id="unsupported" class="state hidden">
+      <p class="msg">This isn't a product page on Amazon Egypt, Noon Egypt, or Jumia Egypt.</p>
+      <p class="hint">Open a product page on one of those sites, then click the extension icon.</p>
+    </div>
+
+    <div id="found" class="state hidden">
+      <div class="site-tag" id="siteTag"></div>
+      <div class="product-title" id="productTitle"></div>
+
+      <p class="field-label">Search text (used for Pricena)</p>
+      <div class="editRow">
+        <input id="queryInput" type="text" spellcheck="false" />
+      </div>
+
+      <p class="section-label">Check price history on:</p>
+
+      <button class="site-btn kanbkam" id="btnKanbkam">
+        <span class="btn-title">Kanbkam</span>
+        <span class="btn-desc">Pastes this exact link into their search</span>
+      </button>
+
+      <button class="site-btn pricena" id="btnPricena">
+        <span class="btn-title">Pricena</span>
+        <span class="btn-desc">Searches by product name</span>
+      </button>
+
+      <p class="footnote" id="footnote"></p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
